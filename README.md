@@ -14,6 +14,11 @@
   - `service`: _service_ tag
   - `env`: _env_ tag
   - `setUser()`: Sample code for adding custom attributes
+  - To connect APM,
+    - Set the domain names to [`allowedTracingOrigins`](https://docs.datadoghq.com/real_user_monitoring/connect_rum_and_traces?tab=browserrum#rum-set-up)
+  - To enable session replay,
+    - Set the [`defaultPrivacyLevel`](https://docs.datadoghq.com/real_user_monitoring/session_replay/privacy_options/?tab=maskuserinput#configuration)
+    - Uncomment the line including `startSessionReplayRecording()`
 - `manifest.json`
   - `matches`: Site URL for RUM demo
     - Refer [doc](https://developer.chrome.com/docs/extensions/mv2/match_patterns/) for match patterns.

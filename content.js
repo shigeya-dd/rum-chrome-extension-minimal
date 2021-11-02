@@ -7,7 +7,9 @@ window.DD_RUM && window.DD_RUM.init({
     version: '1.0.0',
     sampleRate: 100,
     trackInteractions: true,
-    trackSessionAcrossSubdomains: true
+    trackSessionAcrossSubdomains: true,
+    allowedTracingOrigins: ["https://api.example.com", /https:\/\/.*\.my-api-domain\.com/], // Connect APM
+    defaultPrivacyLevel: 'mask-user-input' // Session Replay
 });
 
 window.DD_RUM && window.DD_RUM.setUser({
@@ -17,6 +19,4 @@ window.DD_RUM && window.DD_RUM.setUser({
     membership: 'gold'
 });
 
-// Uncomment the following two lines to enable Session Replay
-// document.body.setAttribute("data-dd-privacy", "mask-user-input");
-// window.DD_RUM.startSessionReplayRecording();
+// window.DD_RUM && window.DD_RUM.startSessionReplayRecording(); // Session Replay
